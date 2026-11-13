@@ -1,13 +1,13 @@
 <!-- reviewed: 2026-11-12 | review every: as needed -->
 # History
 
-Ohmni HQ started as a private repository on January 31, 2026, built to run
+Headquarters started as a private repository on January 31, 2026, built to run
 the repositories behind [Ohmni Oracle](https://ohmnioracle.com). This public
 starter is a fresh build written from how that private repository works. The
 private history stays private because it holds business and personal
 material, so this page records when each piece first appeared there.
 
-| Date | What landed in the private Ohmni HQ |
+| Date | What landed in the private headquarters |
 | --- | --- |
 | January 31, 2026 | First commit: the repo registry, the agent instructions, the status file, the all-repos status command |
 | February 6, 2026 | The work queue |

@@ -1,18 +1,18 @@
-![Ohmni HQ: one headquarters connected to every room of the work](docs/assets/hero.jpg)
+![Headquarters: one hub connected to every room of the work](docs/assets/hero.jpg)
 
-# Ohmni HQ
+# Headquarters
 
 **Headquarters routes the work. The repo that owns the work does it.**
 
-Ohmni HQ is one repo that runs all your other repos. It knows what you own,
+Headquarters is one repo that runs all your other repos. It knows what you own,
 decides where each job goes, sends an agent into the right repo to do it, and
 holds the rules for what agents can do without asking you.
 
 It works with Claude Code and Codex. It is a folder of plain files. There is no
 server and nothing to host.
 
-Nothing you install carries this name. The rules, the registry and the checks
-just say "headquarters," and you can call yours whatever you want.
+It carries no brand. Once it is set up it is your headquarters, and you can
+call it whatever you want.
 
 ## Why it exists
 
@@ -51,7 +51,7 @@ the job this repo does.
 ## Start in two minutes
 
 ```bash
-git clone https://github.com/BTCElectrician/ohmni-headquarters.git
+git clone https://github.com/BTCElectrician/headquarters.git
 ```
 
 Open Claude Code or Codex in the folder and say:
