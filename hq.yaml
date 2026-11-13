@@ -23,6 +23,7 @@ hq:
 #   status_file                 optional: its current-state file (STATUS.md)
 #   main_deploys_to_production  true if pushing main ships to production
 #   release_notes               optional: anything else about how it releases
+#   uses                        optional: the registered repositories this one depends on
 #
 # The two entries below are samples only. They are commented out so they do
 # not count as real repositories. Replace them with your own.
@@ -34,6 +35,8 @@ hq:
 #     status_file: "STATUS.md"
 #     main_deploys_to_production: true
 #     release_notes: "Merging to main deploys the site within a few minutes."
+#     uses:
+#       - storefront-api
 #
 #   storefront-api:
 #     path: "storefront-api"

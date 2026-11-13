@@ -26,6 +26,7 @@ REPO_KEYS = {
     "main_deploys_to_production",
     "release_notes",
     "groups",
+    "uses",
 }
 REQUIRED_REPO_KEYS = ("purpose", "main_deploys_to_production")
 TOP_KEYS = {"hq", "repos", "groups"}
@@ -89,6 +90,16 @@ def check_registry(root: Path, data: Optional[Dict[str, Any]] = None) -> Tuple[L
                 f"{label}: 'main_deploys_to_production' must be true or false so agents know "
                 "whether pushing main is a production release."
             )
+        uses = entry.get("uses")
+        if uses is not None:
+            if not isinstance(uses, list) or not all(hqlib.is_text(u) for u in uses):
+                problems.append(f"{label}: 'uses' must be a list of repo names this repo depends on.")
+            else:
+                for used in uses:
+                    if used == repo.name:
+                        problems.append(f"{label}: 'uses' lists itself.")
+                    elif used not in raw_repos:
+                        problems.append(f"{label}: 'uses' names '{used}', which is not a registered repo.")
         if repo.path in seen_paths:
             problems.append(f"{label}: uses the same folder as repo '{seen_paths[repo.path]}' ({repo.path}).")
         seen_paths[repo.path] = repo.name

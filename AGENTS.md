@@ -73,6 +73,9 @@ unclear or the work crosses repositories, decide the owner here using
 `hq.yaml`, then send a worker with a brief built from
 `templates/worker-brief.md`. Before the worker starts, confirm its actual
 working folder is the owning repository; a sentence in a prompt is not proof.
+When a job touches two repositories, first write down exactly what passes
+between them, with a real example, then send both workers at once. The
+registry's `uses` line says which repository depends on which.
 The worker follows the owner's rules file, does the work, runs the owner's
 checks, and returns a short result. The owner keeps the detailed record in
 its own task, pull request or status file. Headquarters updates its own files

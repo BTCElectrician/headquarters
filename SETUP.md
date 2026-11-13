@@ -66,6 +66,9 @@ For each repository, propose:
   to production automatically?" Mention any deploy hints the helper found.
   Record `true` or `false`. Never guess this one.
 
+Ask which repositories depend on another one (for example an app that calls
+an API) and record that as `uses` on the one that depends.
+
 Offer optional `groups` if the operator describes repositories that belong
 together (for example an app and its API).
 
