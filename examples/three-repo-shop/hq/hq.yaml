@@ -1,0 +1,31 @@
+# Registry for the made-up three-repo shop. This is example data.
+
+hq:
+  name: "Three-repo shop (example)"
+  repos_root: "../repos"
+
+repos:
+  shop-app:
+    path: "shop-app"
+    purpose: "The web storefront where customers browse products and check out."
+    rules_file: "AGENTS.md"
+    status_file: "STATUS.md"
+    main_deploys_to_production: true
+    release_notes: "Merging to main publishes the storefront within minutes."
+  shop-api:
+    path: "shop-api"
+    purpose: "The orders API that the storefront calls to create and look up orders."
+    rules_file: "AGENTS.md"
+    status_file: "STATUS.md"
+    main_deploys_to_production: false
+    release_notes: "Releases are tagged by hand after a staging check."
+  shop-docs:
+    path: "shop-docs"
+    purpose: "The public help site for customers."
+    rules_file: null
+    main_deploys_to_production: true
+
+groups:
+  storefront:
+    - shop-app
+    - shop-api
