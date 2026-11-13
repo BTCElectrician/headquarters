@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Secrets never belong in headquarters
+.env
+.env.*
+*.pem
+*.key
+
+# Local scratch space, including a materialized example
+.scratch/
+example-run/
