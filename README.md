@@ -11,6 +11,9 @@ holds the rules for what agents can do without asking you.
 It works with Claude Code and Codex. It is a folder of plain files. There is no
 server and nothing to host.
 
+Nothing you install carries this name. The rules, the registry and the checks
+just say "headquarters," and you can call yours whatever you want.
+
 ## Why it exists
 
 If you run more than one codebase with AI agents, you are the wiring between
