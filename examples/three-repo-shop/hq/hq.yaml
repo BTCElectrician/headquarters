@@ -12,6 +12,8 @@ repos:
     status_file: "STATUS.md"
     main_deploys_to_production: true
     release_notes: "Merging to main publishes the storefront within minutes."
+    uses:
+      - shop-api
   shop-api:
     path: "shop-api"
     purpose: "The orders API that the storefront calls to create and look up orders."

@@ -134,3 +134,25 @@ def test_discover_drafts_entries_that_fail_until_the_release_rule_is_answered(hq
     write_registry(hq, "repos:\n" + draft.split("repos:\n", 1)[1] + "\n")
     problems, _ = validate_registry.check_registry(hq)
     assert sum("must be true or false" in p for p in problems) == 2
+
+
+def test_uses_must_name_a_registered_repo(hq):
+    make_git_repo(hq.parent / "repos" / "app", {"AGENTS.md": "rules\n"})
+    write_registry(hq, GOOD + "    uses:\n      - api\n")
+    problems, _ = validate_registry.check_registry(hq)
+    assert problems == ["repo 'app': 'uses' names 'api', which is not a registered repo."]
+
+
+def test_uses_naming_a_registered_repo_passes(hq):
+    make_git_repo(hq.parent / "repos" / "app", {"AGENTS.md": "rules\n"})
+    make_git_repo(hq.parent / "repos" / "api", {"AGENTS.md": "rules\n"})
+    api = (
+        "  api:\n"
+        '    path: "api"\n'
+        '    purpose: "The API."\n'
+        '    rules_file: "AGENTS.md"\n'
+        "    main_deploys_to_production: false\n"
+    )
+    write_registry(hq, GOOD + "    uses:\n      - api\n" + api)
+    problems, _ = validate_registry.check_registry(hq)
+    assert problems == []
